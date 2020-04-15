@@ -9,14 +9,14 @@
 <body>
     <header class="navbar">
         <div class="mylogo">
-			<a href="zecoo.html"><img src="img/zecoo.png" width="100px"></a>
+			<a href="../index.html"><img src="img/zecoo.png" width="100px"></a>
 		</div>
 		<div class="git-link">
 			<a href="https://www.github.com/zecoo" target="_blank"><img src="img/icon-github.png"></a>
 		</div>
         <div class="navbar-menu">
             <ul>
-                <li><a href="task0002_1.html">Task1</a></li>
+                <li><a href="index.html">Task1</a></li>
                 <li><a href="task0002_2.html">Task2</a></li>
                 <li><a href="task0002_3.html">Task3</a></li>
                 <li><a href="task0002_4.html">Task4</a></li>
@@ -26,28 +26,34 @@
     <div class="center">
         <h2 class="test">Task2: Carousel</h2>
         <div class="container">
-            <ul class="list">
-                <li><img class="img-slide" src="img/slide-1.png" alt="1"></li>
-                <li><img class="img-slide" src="img/slide-2.png" alt="2"></li>
-                <li><img class="img-slide" src="img/slide-3.png" alt="3"></li>
-                <li><img class="img-slide" src="img/slide-4.png" alt="4"></li>
-                <li><img class="img-slide" src="img/slide-5.png" alt="5"></li>
-                <li><img class="img-slide" src="img/slide-6.png" alt="6"></li>
+            <ul id="img-slide" style="left: -780px;">
+                <li><img src="img/slide-6.png" alt="1"></li>
+                <li><img src="img/slide-1.png" alt="1"></li>
+                <li><img src="img/slide-2.png" alt="2"></li>
+                <li><img src="img/slide-3.png" alt="3"></li>
+                <li><img src="img/slide-4.png" alt="4"></li>
+                <li><img src="img/slide-5.png" alt="5"></li>
+                <li><img src="img/slide-6.png" alt="6"></li>
+                <li><img src="img/slide-1.png" alt="6"></li>
             </ul>
-            <ol class="oval-button">
-                <li class="light-btn" index="0"><a></a></li>
-                <li class="light-btn" index="1"><a></a></li>
-                <li class="light-btn" index="2"><a></a></li>
-                <li class="light-btn" index="3"><a></a></li>
-                <li class="light-btn" index="4"><a></a></li>
-                <li class="light-btn" index="5"><a></a></li>
+            <ol id="oval-button">
+                <li index="0" class="light-btn"></li>
+                <li index="1"></li>
+                <li index="2"></li>
+                <li index="3"></li>
+                <li index="4"></li>
+                <li index="5"></li>
             </ol>
-            <div id="prev" class="arrow">《</div>
-            <div id="next" class="arrow">》</div>
+            <div id="prev" class="arrow">
+                <p>《</p>
+            </div>
+            <div id="next" class="arrow">
+                <p>》</p>
+            </div>
         </div>
         <div class="deal">
-            <button onclick="animate()">ASC</button>
-            <button onclick="lightBtn()">DESC</button>
+            <button onclick="playASC()">ASC</button>
+            <button onclick="playDESC()">DESC</button>
             <button onclick="stop()">Stop</button>
         </div>
         <p id="error"></p>

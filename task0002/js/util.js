@@ -196,6 +196,7 @@ function isMobilePhone(phone) {
 
 function hasClass(element, className){
     var value = element.className;
+
     return value.match(new RegExp('/\s|^/' + className + '/\s|$/'));
 }
 
@@ -203,7 +204,7 @@ function addClass(element, newClassName) {
     // your implement
     if (! hasClass(element, newClassName)) {
         var value = element.className;
-        element.className = value + ' ' + newClassName;
+        element.className = value + '' + newClassName;
     }  
 }
 
@@ -296,21 +297,22 @@ function $(selector) {
 // Task 4.1
 // 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
-    // your implement
     element.addEventListener(event, listener);
 }
 
-// 例如：
-function clickListener(event) {
-    console.log(event);
-}
-//addEvent($("#doma"), "click", a);
-
 // 移除element对象对于event事件发生时执行listener的响应
 function removeEvent(element, event, listener) {
-    // your implement
     element.removeEventListener(event, listener);
 }
+
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    addEvent(element, 'click', listener);
+}
+
+// 例如：
+//addEvent($("#doma"), "click", a);
+
 
 // 实现对于按Enter键时的事件绑定
 function addEnterEvent(element, listener) {
@@ -326,7 +328,7 @@ function addEnterEvent(element, listener) {
 $.on = addEvent;
 $.un = removeEvent;
 $.enter = addEnterEvent;
-$.click = clickListener;
+$.click = addClickEvent;
 
 // 讲道理，ife 这个 task 给的例子并不好，没有task1好 特别是到了DOM相关的内容，让人弄起来没有头绪。可以找找其他的教程和练习
 
