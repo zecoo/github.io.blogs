@@ -22,7 +22,7 @@ ul, li {
 
 p {
 	line-height: 150%;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 body {
@@ -191,8 +191,10 @@ button:hover {
 }
 
 #autoInput {
-	width: 780px;
+	width: 770px;
 	height: 30px;
+	padding-left: 10px;
+	font-size: 16px;
 }
 
 #prompt li{
@@ -207,3 +209,39 @@ button:hover {
 #prompt li:hover {
 	background-color: silver;
 }
+
+.task-intro {
+	margin-bottom: 20px;
+}
+
+.drag-container {
+    height: 500px;
+}
+
+.drag {
+	width: 200px;
+	height: 50px;
+	background-color: white;
+	border-bottom: 1px gray solid;
+	text-align: center;
+	line-height: 50px;
+	cursor: move;
+}
+
+.drag-wrap {
+	width: 200px;
+	height: 500px;
+	background-color: gray;
+	float: left;
+}
+
+.drag-wrap:first-child{
+	margin-right: 200px;
+	color: gray;
+}
+
+.dragging {
+	/* visibility: hidden; */
+	display: none;
+} 
+

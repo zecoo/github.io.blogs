@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Count Down</title>
+    <title>Drag</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -26,19 +26,28 @@
     </header>
     <div class="center">
         <div class="task-intro">
-            <h2 class="test">Task2: Count Down</h2>
-            <p>倒计时：</p>
-            <p>按照格式输入一个未来的时间。如：2030-1-1，得到当前距离目标所剩的时间</p>
+            <h2 class="test">Task5: Drag</h2>
+            <p>动画效果：</p>
+            <p>拖动左右部分的滑块移动到另一个容器中</p>
         </div>
-       
-        <input type="text" id="input-date" placeholder="YYYY-MM-DD">
-        <div class="deal">
-            <button onclick="countDown()">count down</button>
-            <button onclick="reset()">reset</button>
+        <div class="drag-container">
+            <ol class="drag-wrap">
+                <li class="drag">0</li>
+                <li class="drag">1+</li>
+                <li class="drag">2++</li>
+                <li class="drag">3+++</li>
+                <li class="drag">4++++</li>
+            </ol>
+            <ol class="drag-wrap">
+                <li class="drag">5+++++</li>
+                <li class="drag">6++++++</li>
+                <li class="drag">7+++++++</li>
+                <li class="drag">8++++++++</li>
+                <li class="drag">9+++++++++</li>
+            </ol>
         </div>
-        <p id="error"></p>
     </div>
     <script src="js/util.js"></script>
-    <script src="js/task0002_2.js"></script>
+    <script src="js/task0002_5.js"></script>
 </body>
 </html>
