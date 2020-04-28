@@ -6,13 +6,8 @@ var insertLoc = 0;
 
 function dragStart(e) { 
     // 下面的item向上移动50px
-    console.log('this: ');
-    console.log(this);
     moveItem(getNextItem(this), -50);
     // 记录拖动时鼠标的位置
-    startX = e.clientX;
-    startY = e.clientY;
-    console.log(startX, startY);
 }
 
 function dragging(e) {
@@ -51,7 +46,7 @@ function getLocation(event) {
     insertLoc = Math.floor((event.clientY - wrapTopLoc) / 50);
 }
 
-function dragOver(e) {                                       // 拖动中，避免浏览器对容器的默认处理（默认无法将数据/元素放置到其他元素中）
+function dragOver(e) {
     e.preventDefault();
 }
 
@@ -92,10 +87,9 @@ window.onload = function () {
         drag[i].draggable = true;
         drag[i].style.top = (i % 5 * 50) + 'px';
 
-        $.on(drag[i], 'dragstart', dragStart);                       // 开始拖动，整理原容器的其他滑块及记录一些数据
-        $.on(drag[i], 'drag', dragging);                              // 拖动中，使滑块在原容器中消失
+        $.on(drag[i], 'dragstart', dragStart);
+        $.on(drag[i], 'drag', dragging);
     }
-    //$.on(document, 'drop', drop);
-    $.on(document, 'drop', drop);
-    $.on(document, 'dragover', dragOver);
+    $.on(document.body, 'drop', drop);
+    $.on(document.body, 'dragover', dragOver);
 }
